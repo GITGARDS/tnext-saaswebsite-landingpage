@@ -53,14 +53,14 @@ export const Hero = () => {
               height={200}
               width={200}
               alt="cursorImage"
-              className="border absolute right-[476px] top-[108px] hidden sm:inline"
+              className="absolute right-[476px] top-[108px] hidden sm:inline"
             />
             <Image
               src={messageImage}
               height={200}
               width={200}
               alt="messageImage"
-              className="border absolute left-[498px] top-[56px] hidden sm:inline"
+              className="absolute left-[498px] top-[56px] hidden sm:inline"
             />
           </div>
         </div>

@@ -1,0 +1,1 @@
+          <div className="absolute w-full top-2 bottom-0 bg-[linear-gradient(to_right, #f87bff, #fb92cf, #ffdd9b, #c2f0b1, #2fd8fe)] "></div>

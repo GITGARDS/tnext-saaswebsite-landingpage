@@ -9,7 +9,7 @@ export const Navbar = () => {
       <div className="px-4">
         <div className="py-4 flex items-center justify-between">
           <div className="relative">
-            <div className="absolute w-full top-2 bottom-0 bg-gradient-to-r from-rose-200 via-yellow-300 to-rose-200"></div>
+            <div className="absolute w-full top-2 bottom-0 bg-[linear-gradient(to_right,#f87bff,#fb92cf,#ffdd9b,#c2f0b1,#2fd8fe)] blur-md" />
             <Image
               src={logoImage}
               alt="Sass logo"

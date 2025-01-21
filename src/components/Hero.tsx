@@ -1,18 +1,24 @@
+import Image from "next/image";
 import ArrowWIcon from "../assets/icons/arrow-w.svg";
+import cursorImage from "../assets/images/cursor.png";
+import messageImage from "../assets/images/message.png";
 
 export const Hero = () => {
   return (
-    <div className="bg-black text-white 
+    <div
+      className="bg-black text-white 
       bg-[linear-gradient(to_bottom,#000,#200d42_34%,#4f21a1_65%,#a46edb_82%)] 
       py-[72px]
       sm:py-24
       relative overflow-clip
 
-      ">
+      "
+    >
       <div
         className="absolute 
         h-[375px] w-[750px] 
         sm:w-[1536px] sm:h-[768px]
+        lg:w-[2400px] lg:h-[1200px]
         rounded-[100%] 
         bg-black left-1/2 -translate-x-1/2 
         border border-[#b48cde]
@@ -37,10 +43,26 @@ export const Hero = () => {
             </span>
           </a>
         </div>
-        <div className="flex justify-center">
-          <h1 className="text-7xl sm:text-9xl font-bold tracking-tighter text-center mt-8 inline-flex">
-            One Task <br /> at a Time
-          </h1>
+        <div className="flex justify-center mt-8">
+          <div className="inline-flex relative">
+            <h1 className="text-7xl sm:text-9xl font-bold tracking-tighter text-center mt-8 inline-flex">
+              One Task <br /> at a Time
+            </h1>
+            <Image
+              src={cursorImage}
+              height={200}
+              width={200}
+              alt="cursorImage"
+              className="border absolute right-[476px] top-[108px] hidden sm:inline"
+            />
+            <Image
+              src={messageImage}
+              height={200}
+              width={200}
+              alt="messageImage"
+              className="border absolute left-[498px] top-[56px] hidden sm:inline"
+            />
+          </div>
         </div>
         <div className="flex justify-center">
           <p className="text-center text-xl mt-8 max-w-md">

@@ -2,7 +2,7 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import appScreen from "../assets/images/app-screen.png";
 
 export const ProductShowcase = () => {
@@ -11,11 +11,6 @@ export const ProductShowcase = () => {
     target: appImage,
     offset: ["start end", "end end"],
   });
-  useEffect(() => {
-    scrollYProgress.on("change", (latestValue) =>
-      console.log("latestValue", latestValue)
-    );
-  }, [scrollYProgress]);
 
   const rotateX = useTransform(scrollYProgress, [0, 1], [15, 0]);
   const opacity = useTransform(scrollYProgress, [0, 1], [.5, 1]);

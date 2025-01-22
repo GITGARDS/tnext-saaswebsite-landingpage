@@ -3,8 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   webpack(config) {
-    const fileLoaderRule = config.module.rules.find((rule) =>
-      rule.test?.test?.(".svg")
+    const fileLoaderRule = config.module.rules.find(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (rule: { test: { test: (arg0: string) => any } }) =>
+        rule.test?.test?.(".svg")
     );
 
     config.module.rules.push(

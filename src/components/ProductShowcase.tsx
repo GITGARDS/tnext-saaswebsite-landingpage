@@ -1,9 +1,25 @@
 // import appScreen from "../assets/images/app-screen.png";
-
+"use client";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 import appScreen from "../assets/images/app-screen.png";
 
 export const ProductShowcase = () => {
+  const appImage = useRef<HTMLImageElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: appImage,
+    offset: ["start end", "end end"],
+  });
+  useEffect(() => {
+    scrollYProgress.on("change", (latestValue) =>
+      console.log("latestValue", latestValue)
+    );
+  }, [scrollYProgress]);
+
+  const rotateX = useTransform(scrollYProgress, [0, 1], [15, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [.5, 1]);
+
   return (
     <div
       className="bg-black text-white 
@@ -23,7 +39,20 @@ export const ProductShowcase = () => {
             on task at a time.
           </p>
         </div>
-        <Image src={appScreen} alt="The product screenshot" className="mt-14" />
+        <motion.div
+          style={{
+            opacity: opacity,
+            rotateX: rotateX,
+            transformPerspective: "800px",
+          }}
+        >
+          <Image
+            src={appScreen}
+            alt="The product screenshot"
+            className="mt-14"
+            ref={appImage}
+          />
+        </motion.div>
       </div>
     </div>
   );

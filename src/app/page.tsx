@@ -1,4 +1,5 @@
 import { Banner } from "@/components/Banner";
+import { CallToAction } from "@/components/CallToAction";
 import { FAQs } from "@/components/FAQs";
 import { Features } from "@/components/Features";
 import { Hero } from "@/components/Hero";
@@ -16,8 +17,8 @@ export default function Home() {
       <Features />
       <ProductShowcase />
       <FAQs />
-      {/* <hr />
       <CallToAction />
+      {/* <hr />
       <Footer /> */}
     </>
   );
